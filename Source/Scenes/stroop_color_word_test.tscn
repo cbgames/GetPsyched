@@ -47,13 +47,13 @@ size_flags_stretch_ratio = 3.0
 bbcode_enabled = true
 text = "
 
-[b]Word Color Test[/b]
+[b]Word Meaning Test[/b]
 
-Click the button that matches the COLOR of the displayed word.
-Ignore the word's meaning, focus only on the display color.
+Click the button that matches the MEANING of the displayed word.
+Ignore the word's display color, focus only on the meaning.
 
 Example:
-When you see the word \"Red\" displayed in [color=blue]blue color[/color], click the [color=blue]BLUE[/color] button."
+When you see the word \"Red\" displayed in [color=blue]blue color[/color], click the [color=red]RED[/color] button."
 scroll_active = false
 horizontal_alignment = 1
 
@@ -110,13 +110,13 @@ size_flags_stretch_ratio = 3.0
 bbcode_enabled = true
 text = "
 
-[b]Word Meaning Test[/b]
+[b]Word Color Test[/b]
 
-Click the button that matches the MEANING of the displayed word.
-Ignore the word's display color, focus only on the meaning.
+Click the button that matches the COLOR of the displayed word.
+Ignore the word's meaning, focus only on the display color.
 
 Example:
-When you see the word \"Red\" displayed in [color=blue]blue color[/color], click the [color=red]RED[/color] button."
+When you see the word \"Red\" displayed in [color=blue]blue color[/color], click the [color=blue]BLUE[/color] button."
 scroll_active = false
 horizontal_alignment = 1
 
