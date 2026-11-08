@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dq1b4cwvewugl"]
+
+[ext_resource type="Script" uid="uid://6fupxp7asygh" path="res://Code/test.gd" id="1_lc1oi"]
+
+[node name="Test" type="Control" unique_id=1444688475]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lc1oi")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=702336744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=182723193]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=866348529]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+
+[node name="Button_Start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=707736480]
+layout_mode = 2
+text = "Start Timer
+"
+
+[node name="Button_Stop" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=152565442]
+layout_mode = 2
+text = "Stop Timer
+"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=250937523]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0 seconds"
+
+[node name="Button_Save" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=157884907]
+layout_mode = 2
+text = "Save it!"
+
+[node name="Button_Load" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=380791201]
+layout_mode = 2
+text = "Load it!"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Stop" to="." method="_on_button_stop_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]
