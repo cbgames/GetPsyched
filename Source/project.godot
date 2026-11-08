@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="GetPsyched"
-run/main_scene="uid://dq1b4cwvewugl"
+run/main_scene="uid://c6c78rhd2bqeq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1180
+window/size/viewport_height=820
 
 [physics]
 
