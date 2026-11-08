@@ -57,6 +57,7 @@ text = "Load it!"
 
 [node name="Button_Copy" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1666818049]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.5184233, 1, 0.58283544, 1)
 text = "Clipboard"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
