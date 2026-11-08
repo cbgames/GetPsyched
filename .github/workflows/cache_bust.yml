@@ -1,0 +1,44 @@
+name: Automated Cache Buster for Get Psyched
+
+on:
+  push:
+      branches:
+        - main # Automatically run on main branch push
+      paths:
+        - 'docs/**' # Only when docs folder is updated
+
+permissions:
+  contents: write
+
+jobs:
+  cache-bust:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Apply Cache-Bustong Version Strings
+        run: |
+          # Generate a unique version string using the current timestamp
+          VERSION=$(date +%s)
+          echo "Busting cache with version string ?v=$VERSION"
+
+          TARGET_FILE="docs/index.html"
+
+          if [ -f "$TARGET_FILE" ]; then
+            # Append ?v=TIMESTAMP to the major loading paths
+            sed -i "s/\.js\"/.js?v=$VERSION\"/g" "$TARGET_FILE"
+            sed -i "s/\.wasm\"/.wasm?v=$VERSION\"/g" "$TARGET_FILE"
+            sed -i "s/\.pck\"/.pck?v=$VERSION\"/g" "$TARGET_FILE"
+          else
+            echo "Error: docs/index.html not found!"
+            exit 1
+          fi
+          
+      - name: Commit and Push Updated index
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          # Only commit if changes were actually made to prevent loops
+          git diff-index --quiet HEAD || git commit -m "chore: automated cache bust [skip ci]"
+          git push
