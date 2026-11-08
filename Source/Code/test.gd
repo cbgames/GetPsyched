@@ -32,3 +32,6 @@ func _on_button_load_pressed() -> void:
 	var config = ConfigFile.new()
 	if config.load(SAVE_PATH) == OK:
 		_seconds = config.get_value("test", "seconds", 0)
+
+func _on_button_copy_pressed() -> void:
+	DisplayServer.clipboard_set("The displayed value is: " + $MarginContainer/VBoxContainer/HBoxContainer/LineEdit.text)

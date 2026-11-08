@@ -55,7 +55,12 @@ text = "Save it!"
 layout_mode = 2
 text = "Load it!"
 
+[node name="Button_Copy" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1666818049]
+layout_mode = 2
+text = "Clipboard"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Stop" to="." method="_on_button_stop_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Copy" to="." method="_on_button_copy_pressed"]
