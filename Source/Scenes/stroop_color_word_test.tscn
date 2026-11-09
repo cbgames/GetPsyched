@@ -3,6 +3,8 @@
 [ext_resource type="Theme" uid="uid://banjv6ihjmfjh" path="res://Styles/default_theme.tres" id="1_c61a0"]
 [ext_resource type="Script" uid="uid://bismq1hlp2me8" path="res://Code/stroop_color_word_test.gd" id="2_k7yth"]
 [ext_resource type="Script" uid="uid://bk6h8dydu2ws" path="res://Code/screen.gd" id="3_xqaa1"]
+[ext_resource type="Script" uid="uid://dv2fe1rr5df68" path="res://Code/test_screen.gd" id="4_ty3ca"]
+[ext_resource type="Script" uid="uid://cncufifp0g5kt" path="res://Code/delayed_button.gd" id="5_lmykn"]
 
 [node name="StroopColorWordTest" type="Control" unique_id=484783487]
 layout_mode = 3
@@ -61,6 +63,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start!"
+script = ExtResource("5_lmykn")
 
 [node name="TestScreen1" type="MarginContainer" parent="." unique_id=835123805]
 unique_name_in_owner = true
@@ -71,11 +74,74 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_xqaa1")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("4_ty3ca")
+metadata/_edit_use_anchors_ = true
 
-[node name="GoButton" type="Button" parent="TestScreen1" unique_id=1351940274]
+[node name="Panel" type="Panel" parent="TestScreen1" unique_id=25738640]
 layout_mode = 2
-text = "Go!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TestScreen1/Panel" unique_id=310849913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TestScreen1/Panel/VBoxContainer" unique_id=1353169972]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+bbcode_enabled = true
+text = "[b]Prompt[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TestScreen1/Panel/VBoxContainer" unique_id=134189337]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Button1" type="Button" parent="TestScreen1/Panel/VBoxContainer/HBoxContainer" unique_id=1351940274]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="TestScreen1/Panel/VBoxContainer/HBoxContainer" unique_id=511737280]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="TestScreen1/Panel/VBoxContainer/HBoxContainer" unique_id=1119430065]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3
+"
+
+[node name="Button4" type="Button" parent="TestScreen1/Panel/VBoxContainer/HBoxContainer" unique_id=1696767295]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4
+"
+
+[node name="DebugLayer" type="MarginContainer" parent="TestScreen1/Panel" unique_id=157078688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugText" type="RichTextLabel" parent="TestScreen1/Panel/DebugLayer" unique_id=1644686469]
+layout_mode = 2
+mouse_filter = 2
+text = "Correct: 0
+Incorrect: 0"
 
 [node name="IntroScreen2" type="MarginContainer" parent="." unique_id=1034869772]
 unique_name_in_owner = true
@@ -124,8 +190,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start!"
+script = ExtResource("5_lmykn")
 
-[node name="TestScreen2" type="MarginContainer" parent="." unique_id=967870436]
+[node name="TestScreen2" type="MarginContainer" parent="." unique_id=1863239892]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -134,15 +201,78 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_xqaa1")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("4_ty3ca")
+type = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="GoButton" type="Button" parent="TestScreen2" unique_id=1374136689]
+[node name="Panel" type="Panel" parent="TestScreen2" unique_id=340936946]
 layout_mode = 2
-text = "Go!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TestScreen2/Panel" unique_id=194470775]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TestScreen2/Panel/VBoxContainer" unique_id=1584058410]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+bbcode_enabled = true
+text = "[b]Prompt[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TestScreen2/Panel/VBoxContainer" unique_id=1993168814]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Button1" type="Button" parent="TestScreen2/Panel/VBoxContainer/HBoxContainer" unique_id=771994334]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="TestScreen2/Panel/VBoxContainer/HBoxContainer" unique_id=1226963586]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="TestScreen2/Panel/VBoxContainer/HBoxContainer" unique_id=1158598922]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3
+"
+
+[node name="Button4" type="Button" parent="TestScreen2/Panel/VBoxContainer/HBoxContainer" unique_id=2076951197]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4
+"
+
+[node name="DebugLayer" type="MarginContainer" parent="TestScreen2/Panel" unique_id=974096035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugText" type="RichTextLabel" parent="TestScreen2/Panel/DebugLayer" unique_id=1469906399]
+layout_mode = 2
+mouse_filter = 2
+text = "Correct: 0
+Incorrect: 0"
 
 [node name="ResultScreen" type="MarginContainer" parent="." unique_id=251359549]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,33 +296,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ResultScreen/Panel/VBoxContainer" unique_id=1287112563]
+[node name="ResultText" type="RichTextLabel" parent="ResultScreen/Panel/VBoxContainer" unique_id=1287112563]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 bbcode_enabled = true
-text = "
+text = "[b][color=yellow]End[/color] [color=green]Of[/color] [color=blue]Test[/color][/b]
+[color=red]Id: 2026-11-08T20:00:14
 
-[b]End Of Test[/b]
+Word Matching:
+Accuracy 50% in 17 seconds
+(Correct 10, Incorrect 10)
 
-
-
-This is the end of the test."
+Color Matching:
+Accuracy 75% in 30 seconds
+(Correct 15, Incorrect 5)[/color]
+"
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="ResultScreen/Panel/VBoxContainer" unique_id=1372508444]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit"
+script = ExtResource("5_lmykn")
 
 [connection signal="screen_complete" from="IntroScreen1" to="." method="_on_screen_complete"]
 [connection signal="pressed" from="IntroScreen1/Panel/VBoxContainer/StartButton" to="IntroScreen1" method="_on_complete_button_pressed"]
 [connection signal="screen_complete" from="TestScreen1" to="." method="_on_screen_complete"]
-[connection signal="pressed" from="TestScreen1/GoButton" to="TestScreen1" method="_on_complete_button_pressed"]
+[connection signal="visibility_changed" from="TestScreen1" to="TestScreen1" method="_on_visibility_changed"]
+[connection signal="pressed" from="TestScreen1/Panel/VBoxContainer/HBoxContainer/Button1" to="TestScreen1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="TestScreen1/Panel/VBoxContainer/HBoxContainer/Button2" to="TestScreen1" method="_on_button_2_pressed"]
+[connection signal="pressed" from="TestScreen1/Panel/VBoxContainer/HBoxContainer/Button3" to="TestScreen1" method="_on_button_3_pressed"]
+[connection signal="pressed" from="TestScreen1/Panel/VBoxContainer/HBoxContainer/Button4" to="TestScreen1" method="_on_button_4_pressed"]
 [connection signal="screen_complete" from="IntroScreen2" to="." method="_on_screen_complete"]
 [connection signal="pressed" from="IntroScreen2/Panel/VBoxContainer/StartButton" to="IntroScreen2" method="_on_complete_button_pressed"]
 [connection signal="screen_complete" from="TestScreen2" to="." method="_on_screen_complete"]
-[connection signal="pressed" from="TestScreen2/GoButton" to="TestScreen2" method="_on_complete_button_pressed"]
+[connection signal="visibility_changed" from="TestScreen2" to="TestScreen2" method="_on_visibility_changed"]
+[connection signal="pressed" from="TestScreen2/Panel/VBoxContainer/HBoxContainer/Button1" to="TestScreen2" method="_on_button_1_pressed"]
+[connection signal="pressed" from="TestScreen2/Panel/VBoxContainer/HBoxContainer/Button2" to="TestScreen2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="TestScreen2/Panel/VBoxContainer/HBoxContainer/Button3" to="TestScreen2" method="_on_button_3_pressed"]
+[connection signal="pressed" from="TestScreen2/Panel/VBoxContainer/HBoxContainer/Button4" to="TestScreen2" method="_on_button_4_pressed"]
 [connection signal="screen_complete" from="ResultScreen" to="." method="_on_screen_complete"]
 [connection signal="pressed" from="ResultScreen/Panel/VBoxContainer/ExitButton" to="ResultScreen" method="_on_complete_button_pressed"]
