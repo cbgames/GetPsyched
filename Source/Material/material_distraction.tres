@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dwu4p6afs54ug"]
+
+[ext_resource type="Shader" uid="uid://cm1le4xk42qw5" path="res://Material/material_distraction.gdshader" id="1_w5ikn"]
+
+[resource]
+shader = ExtResource("1_w5ikn")
+shader_parameter/grid_size = 8.0
+shader_parameter/shape_speed = 1.0
+shader_parameter/shape_scale = 0.3
+shader_parameter/blur = 0.05
+shader_parameter/global_alpha = 0.5
+shader_parameter/scroll_speed_x = 0.2
+shader_parameter/scroll_speed_y = 0.1

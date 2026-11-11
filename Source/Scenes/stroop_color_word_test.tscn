@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bk6h8dydu2ws" path="res://Code/screen.gd" id="3_xqaa1"]
 [ext_resource type="Script" uid="uid://dv2fe1rr5df68" path="res://Code/test_screen.gd" id="4_ty3ca"]
 [ext_resource type="Script" uid="uid://cncufifp0g5kt" path="res://Code/delayed_button.gd" id="5_lmykn"]
+[ext_resource type="Material" uid="uid://dwu4p6afs54ug" path="res://Material/material_distraction.tres" id="6_tdspc"]
 
 [node name="StroopColorWordTest" type="Control" unique_id=484783487]
 layout_mode = 3
@@ -322,6 +323,17 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Exit"
 script = ExtResource("5_lmykn")
+
+[node name="Overlay" type="Panel" parent="." unique_id=1232265292]
+visible = false
+material = ExtResource("6_tdspc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="screen_complete" from="IntroScreen1" to="." method="_on_screen_complete"]
 [connection signal="pressed" from="IntroScreen1/Panel/VBoxContainer/StartButton" to="IntroScreen1" method="_on_complete_button_pressed"]
